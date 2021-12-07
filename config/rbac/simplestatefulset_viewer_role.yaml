@@ -1,0 +1,20 @@
+# permissions for end users to view simplestatefulsets.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: simplestatefulset-viewer-role
+rules:
+- apiGroups:
+  - apps.cncamp.io
+  resources:
+  - simplestatefulsets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps.cncamp.io
+  resources:
+  - simplestatefulsets/status
+  verbs:
+  - get
